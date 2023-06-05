@@ -1,0 +1,22 @@
+To reproduce our experiments:
+
+1. Train CNN models
+
+Run all Python scripts A_*.py - they will fit models ResNet trained on CIFAR10 or MobileNet trained on CIFAR100.
+To determine which variant to train, edit the configurations within each file.
+- `python A_model_architectures.py`
+- `python A_init_seed.py`
+- `python A_epoch.py`
+- `python A_split_train_test.py`
+- `python A_aug.py`.
+
+2. Extract features from in-distribution and out-distribution files
+Execute all python scripts B_*.py
+- `python B_generate_features.py`
+- `python B_generate_features_split_train_test.py`
+
+3. Calculate OoD scores
+- run `python C_generate_features.py`
+
+4. Retrieve the results of the experiments
+- run `python D_get_results.py`
